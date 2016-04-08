@@ -33,3 +33,4 @@ source 'https://rubygems.org'
  gem 'factory_girl_rails', '~> 4.0'
  gem 'faker'
  gem 'whenever', :require => false
+ gem 'devise'
