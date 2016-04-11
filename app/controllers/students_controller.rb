@@ -1,4 +1,9 @@
 class StudentsController < ApplicationController
+  # before_filter :get_students, only: [:index]
+
+  def index
+    @section = Section.find(params[:section_id])
+  end
 
   def show
     @student = Student.find(params[:id])
