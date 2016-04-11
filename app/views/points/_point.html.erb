@@ -1,0 +1,5 @@
+<div class="point-arrows pull-left">
+   <div><%= link_to " ", student_up_point_path(student), class: 'glyphicon glyphicon-chevron-up', method: :post %></div>
+  <div><strong><%= student.total_points %></strong></div>
+  <div><%= link_to " ", student_down_point_path(student), class: 'glyphicon glyphicon-chevron-down', method: :post %></div>
+</div>

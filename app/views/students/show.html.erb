@@ -1,0 +1,18 @@
+<div>
+  <%= render partial: 'points/point', locals: { student: @student } %>
+  <h1>
+    <%= @student.name %> <br>
+  </h1>
+  <div class="col-md-4">
+  <h3>
+    <%= pluralize(@student.total_points, 'point') %>
+    <div>
+      <small>
+        <%= pluralize(@student.up_points, 'up point') %>,
+        <%= pluralize(@student.down_points, 'down point') %>
+      </small>
+      <%= link_to "Delete Student", [@student.section, @student], method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this student?' } %>
+    </div>
+  </h3>
+</div>
+</div>

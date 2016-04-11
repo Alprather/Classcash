@@ -11,7 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160408074329) do
+ActiveRecord::Schema.define(version: 20160410124046) do
+
+  create_table "points", force: :cascade do |t|
+    t.integer  "value"
+    t.integer  "user_id"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "points", ["student_id"], name: "index_points_on_student_id"
+  add_index "points", ["user_id"], name: "index_points_on_user_id"
+
+  create_table "schools", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "grade"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "section_id"
+  end
+
+  add_index "students", ["section_id"], name: "index_students_on_section_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
